@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import { fire } from 'shared/Firebase';
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    fire();
+  }
   render() {
     return (
       <div className="App">
