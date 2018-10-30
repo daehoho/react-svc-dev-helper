@@ -8,6 +8,7 @@ class App extends Component {
     super();
     fire();
   }
+
   render() {
     return (
       <div className="App">
