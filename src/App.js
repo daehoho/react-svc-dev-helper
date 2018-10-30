@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { fire } from 'shared/Firebase';
 import logo from './logo.svg';
 import './App.css';
+import { getFireDB } from './shared/Firebase';
 
 class App extends Component {
   constructor() {

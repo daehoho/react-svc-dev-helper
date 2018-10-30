@@ -16,3 +16,6 @@ export const fire = () => {
   database = firebase.database()
 }
 
+export const getFireDB = () => {
+    return database.ref('/').once('value')
+}
