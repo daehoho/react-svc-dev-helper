@@ -3,14 +3,32 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <title>Service Development Helper</title>
-  <!-- materialize.css 포함 -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-  <style media="screen">
-    body{ background: #eee; }
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+              manifest.json provides metadata used when your web app is added to the
+              homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
+            -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <!--
+              Notice the use of %PUBLIC_URL% in the tags above.
+              It will be replaced with the URL of the `public` folder during the build.
+              Only files inside the `public` folder can be referenced from the HTML.
+        
+              Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+              work correctly both with client-side routing and a non-root public URL.
+              Learn how to configure a non-root public URL by running `npm run build`.
+            -->
+    
+    <title>Service Development Helper</title>
+    <!-- materialize.css 포함 -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <style media="screen">
+      body {
+        background: #eee;
+      }
     #MY_NAME{ font-size: 1.5em; font-weight: bold; }
     #CONTENTS{ min-height: 700px; margin-top: 20px; }
     .input-field input[type=text]:focus {
@@ -22,94 +40,20 @@
 </head>
 
 <body>
-  <!-- 네비게이션 영역 -->
-  <nav class="indigo">
-    <div class="nav-wrapper container">
-      <a href="/" class="brand-logo">Service Developemnt Helper</a>
-      <!-- 데스크톱 모드에서 보이는 메인메뉴 -->
-      <ul class="right hide-on-med-and-down">
-        <li><a href="hosting.html"><i class="material-icons">language</i></a></li>
-        <li><a href="auth.html"><i class="material-icons">supervisor_account</i></a></li>
-        <li><a class="dropdown-button" data-activates="dropdown1"><i class="material-icons">more_vert</i></a></li>
-      </ul>
-        <!-- 드롭다운 메뉴 -->
-        <ul id="dropdown1" class="dropdown-content">
-          <li><a class="black-text"><strong>더 보기</strong></a></li>
-          <li class="divider"></li>
-          <li><a href="https://portal.daou.co.kr" target="_blank" class="indigo-text">portal</a></li>
-        </ul>
-      <!-- 모바일에서 보이는 메인 메뉴 -->
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="hosting.html">Hosting</a></li>
-        <li><a href="auth.html">Auth</a></li>
-        <li class="divider"></li>
-        <li><a href="https://portal.daou.co.kr" target="_blank">portal</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-
-
-    </div>
-  </nav>
-  <!-- 내용영역 -->
-  <div class="container" id="CONTENTS">
-    <ul class="collection white z-depth-1">
-      <li class="collection-item avatar">
-        <i class="material-icons circle indigo">whatshot</i>
-        <span class="title"><b>Service Development Helper</b></span>
-        <p>서비스 개발 본부원들 위한 도우미! <br>
-          에베레레레레ㅔ레레</p>
-      </li>
-    </ul>
-    <ul class="collapsible collection white" data-collapsible="expandable">
-      <li>
-        <div class="collapsible-header active">
-          <i class="material-icons">language</i><b>팀커 도우미</b>
-        </div>
-        <div class="collapsible-body">
-          <p> 팀 커뮤니케이션 일정과 장소를 정하고 해당 날짜에 알림을 줍니다.
-          <a href="hosting.html" class="secondary-content btn indigo"><i class="material-icons">send</i></a>
-          </p>
-        </div>
-      </li>
-      <li>
-        <div class="collapsible-header active">
-          <i class="material-icons">supervisor_account</i><b>사원 당번 알리미</b>
-        </div>
-        <div class="collapsible-body">
-          <p> 사원 당번 순서를 알려줍니다.
-          <a href="auth.html" class="secondary-content btn indigo"><i class="material-icons">send</i></a>
-          </p>
-        </div>
-      </li>
-    </ul>
-
-  </div>
-
-  <!-- 바닥글 영역 -->
-  <footer class="page-footer indigo">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Service Development Helper</h5>
-          <p class="grey-text text-lighten-4">Test Test</p>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Good Links</h5>
-          <ul>
-            <li><a class="white-text" target="_blank" href="https://portal.daou.co.kr">Daou Portal</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      &copy; 2018 Copyright DGC</a> with Service Development (Daou Tech)
-      <a class="white-text right" href="http://materializecss.com/" target="_blank">design by Materializecss</a>
-      </div>
-    </div>
-  </footer>
-
+  <div id='root'></div>
   <!--Import jQuery before materialize.js-->
+  !-- Firebase App is always required and must be first -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+  
+  <!-- Add additional services that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-messaging.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-functions.js"></script>
+
+<!-- Comment out (or don't include) services that you don't want to use -->
+<!-- <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-storage.js"></script> -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
   <script type="text/javascript">
