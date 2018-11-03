@@ -1,20 +1,31 @@
 import React, { Component } from 'react';
-import { fire } from 'shared/Firebase';
+import firebase, { auth, provider } from 'shared/Firebase';
 import Header from 'components/Header';
-import Footer from 'components/Footer';
 import Contents from 'components/Contents';
-import logo from './logo.svg';
+import Footer from 'components/Footer';
+import Authentication from './components/Authentication';
+import SignUpForm from './components/SignUpForm';
+
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    fire();
+  state = {
+    user : null
   }
+
+  handleLogin = (data) => {
+    const { user } = this.state;
+    this.setState({
+      user: data
+    })
+  }
+
   render() {
     return (
       <div>
         <Header />
+        <Authentication onAuth={this.handleLogin}/>
+        <SignUpForm/>
         <Contents />
         <Footer />
       </div>
