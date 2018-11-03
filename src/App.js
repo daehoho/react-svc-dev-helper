@@ -4,7 +4,8 @@ import Header from 'components/Header';
 import Contents from 'components/Contents';
 import Footer from 'components/Footer';
 import Authentication from './components/Authentication';
-import SignUpForm from './components/SignUpForm';
+import SignUp from './components/SignUp';
+import SignIn from './components/SignIn';
 
 import './App.css';
 
@@ -25,7 +26,8 @@ class App extends Component {
       <div>
         <Header />
         <Authentication onAuth={this.handleLogin}/>
-        <SignUpForm/>
+        <SignIn onAuth={this.handleLogin}/>
+        <SignUp />
         <Contents />
         <Footer />
       </div>

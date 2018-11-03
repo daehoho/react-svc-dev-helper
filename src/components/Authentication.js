@@ -41,9 +41,9 @@ class Authentication extends Component {
             <div class="card">
                 <div class="card-content">
                     {this.state.user ?
-                        <button id="BTN_GOOGLE_LOGIN" type="button" onClick={this.logout}>Log Out</button>
+                        <button id="BTN_GOOGLE_LOGIN" type="button" onClick={this.logout}>Google Log Out</button>
                         :
-                        <button id="BTN_GOOGLE_LOGIN" type="button" onClick={this.login}>Log In</button>
+                        <button id="BTN_GOOGLE_LOGIN" type="button" onClick={this.login}>Google Log In</button>
                     }
                 </div>
                 {this.state.user ?

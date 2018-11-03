@@ -3,22 +3,15 @@ import { auth, provider } from 'shared/Firebase';
 import SignUpForm from './SignUpForm';
 
 class SignUp extends Component {
-    state = {
-        email : '',
-        password : ''
-    }
-
-    handleSignUp = (data) => {
-        this.setState({
-            email : data.email,
-            password : data.password
-        })
-    }
-
     render() {
-        // return(
-        //     <SignUpForm onCreate={this.handleSignUp}/>
-        // );
+        return(
+            <div class="container" id="CONTENTS">
+                <h4>Sign Up</h4>
+                <div class="row card-panel">
+                    <SignUpForm />
+                </div>
+            </div>
+        );
     }
 }
 

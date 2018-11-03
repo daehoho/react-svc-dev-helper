@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import { auth, provider } from 'shared/Firebase';
 
-class SignUpForm extends Component {
+class signUpForm extends Component {
     duplicated_msg = '';
     state = {
         name : '',
         team : '',
-        email : '',
+        mail : '',
         password :'',
         password_check :''
     }
     
-    signup = () => {
+    signUp = () => {
         const { name } = this.state;
-        auth.createUserWithEmailAndPassword(this.state.email, this.state.password).then(function () {
+        auth.createUserWithEmailAndPassword(this.state.mail, this.state.password).then(function () {
             var user = auth.currentUser;
             user.updateProfile({
                 'displayName' : name,
             }).then(function() {
-                alert("success for signup");
+                alert("success for signUp");
                 window.location.reload();
             }, function (error) {
                 console.log(error);
@@ -48,12 +48,12 @@ class SignUpForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.signup();
+        this.signUp();
         // this.props.onCreate(this.state);
         this.setState({
             name:'',
             team:'',
-            email:'',
+            mail:'',
             password:'',
             password_check:''
         })
@@ -69,11 +69,11 @@ class SignUpForm extends Component {
                     name="name"
                 />
                 <input 
-                    placeholder="email"
-                    type="email"
-                    value={this.state.email}
+                    placeholder="mail"
+                    type="mail"
+                    value={this.state.mail}
                     onChange = {this.handleChange}
-                    name="email"
+                    name="mail"
                 />
                 <input 
                     placeholder="team"
@@ -102,4 +102,4 @@ class SignUpForm extends Component {
     }
 }
 
-export default SignUpForm;
+export default signUpForm;
