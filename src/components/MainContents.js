@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import List from './List';
 
-class Contents extends Component {
+class MainContents extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -10,7 +10,7 @@ class Contents extends Component {
                     title: '팀커 도우미',
                     icon: 'language',
                     desc: '팀 커뮤니케이션 일정과 장소를 정하고 해당 날짜에 알림을 줍니다.',
-                    link: '#'
+                    link: '/teamComm'
                 },
                 {
                     title: '사원 당번 알리미',
@@ -49,4 +49,4 @@ class Contents extends Component {
     }
 }
 
-export default Contents;
+export default MainContents;
